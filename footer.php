@@ -5,7 +5,7 @@
  * Contains the closing of the #content div and all content after
  *
  * @package WordPress
- * @subpackage THWP
+ * @subpackage Interior Design
  */
 ?>
 </div>

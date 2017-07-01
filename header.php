@@ -3,7 +3,7 @@
  * The header of every page
  *
  * @package WordPress
- * @subpackage THWP
+ * @subpackage Interior Design
  */?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -13,6 +13,19 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
 	<?php wp_head(); ?>
+    <script type="text/javascript">
+    (function($){
+        $(function(){
+            $('.homepage-image').each(function(){
+                var $this = $(this);
+                var src = $this.attr('src');
+                var $replaced = $('<div>', {'class': 'homepage-image'});
+                $this.replaceWith($replaced);
+                $replaced.parallax({imageSrc: src, positionY: '-230px', speed: 0.85});
+            });
+        });
+    })(jQuery);
+    </script>
 </head>
 <body>
 <div class="site">

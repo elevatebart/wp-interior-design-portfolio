@@ -3,7 +3,7 @@
  * The main template file
  *
  * @package WordPress
- * @subpackage THWP
+ * @subpackage Interior Design
  */
 
 get_header(); ?>

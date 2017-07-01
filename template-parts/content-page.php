@@ -22,5 +22,5 @@
 			'separator'   => '<span class="screen-reader-text">, </span>',
 		) );
 		?>
-	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+	</div>
+</article>

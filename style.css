@@ -1,5 +1,5 @@
 /*
-Theme Name: THWP
+Theme Name: Interior Design
 */
 
 /**
@@ -225,6 +225,25 @@ body{
 	margin: auto;
 }
 
+a{
+	text-decoration: none;
+	color: #5399FF;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+blockquote {
+	color: #707070;
+	color: rgba(51, 51, 51, 0.7);
+	font-size: 1.4rem;
+	font-style: italic;
+	line-height: 1.6667;
+	margin-bottom: 1.6667em;
+	padding-left: 0.7778em;
+}
+
 
 /* Main Title: Site Name */
 
@@ -251,7 +270,7 @@ h1.site-name a, h2.site-name a{
 /* Memus on top */
 
 .main-navigation{
-	margin-top: 30px;
+	margin: 30px 0;
 	position: relative;
 }
 
@@ -263,7 +282,7 @@ h1.site-name a, h2.site-name a{
 
 .main-navigation ul li{
 	display: inline-block;
-	
+	position: relative;
 }
 
 .main-navigation a{
@@ -286,9 +305,9 @@ h1.site-name a, h2.site-name a{
 
 .primary-menu{
 	background: #FFFFFF;
-	position: relative;
 	z-index: 2;
 	display: inline-block;
+	position: relative;
 }
 
 .primary-menu li{
@@ -315,11 +334,62 @@ h1.site-name a, h2.site-name a{
 	padding-left: 10px;
 }
 
+.current-menu-item:before, .current-page-ancestor:before{
+	content: '';
+	display: block;
+	position: absolute;
+	border: 5px solid transparent;
+	border-bottom-color: #CCCCCC;
+	bottom: -10px;
+	left: 50%;
+	margin-left: -15px;
+}
+
 
 /* homepage */
 
 .homepage-image{
 	width: 900px;
-	height: 300px;
+	height: 400px;
 	margin: 10px 0;
+}
+
+/* section page design */
+.th-section-content{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-content: center;
+}
+
+.th-section-link{
+	display: inline-block;
+	text-align: left;
+	position: relative;
+	margin: 11px;
+	padding: 11px;
+	width: 250px;
+	text-decoration: none;
+	color: #333333;
+}
+
+.th-section-link:hover{
+	outline: 1px solid #CCCCCC;
+}
+
+.th-section-link div{
+	width: 100%;
+	padding-bottom: 100%;
+	background-size: cover;
+	border: 1px solid #CCC;
+}
+
+.th-section-link span{
+	font-size: 11pt;
+}
+
+
+.th-section-header{
+	margin: 10px 10%;
+	text-transform: capitalize;
 }

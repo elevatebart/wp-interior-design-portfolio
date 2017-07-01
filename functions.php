@@ -3,7 +3,7 @@
  * the functions
  *
  * @package WordPress
- * @subpackage THWP
+ * @subpackage Interior Design
  */
 
 function setup_thwp() {
@@ -25,8 +25,21 @@ function setup_thwp() {
 }
 add_action( 'after_setup_theme', 'setup_thwp');
 
+/**
+ * JavaScript Detection.
+ *
+ * Adds a `js` class to the root `<html>` element when JavaScript is detected.
+ *
+ * @since Twenty Fifteen 1.1
+ */
+function thwp_javascript_detection() {
+	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+add_action( 'wp_head', 'thwp_javascript_detection', 0 );
+
 function thwp_scripts() {
     // Theme stylesheet.
 	wp_enqueue_style( 'thwp-style', get_stylesheet_uri() );
+	wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', array ( 'jquery' ));
 }
 add_action( 'wp_enqueue_scripts', 'thwp_scripts' );
