@@ -11,7 +11,7 @@ get_header(); ?>
 <p><?php the_content(); ?></p>
 <?php $args = array(
 	'sort_order' => 'asc',
-	'sort_column' => 'post_title',
+	'sort_column' => 'menu_order',
 	'hierarchical' => 1,
 	'exclude' => '',
 	'include' => '',
