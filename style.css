@@ -345,8 +345,8 @@ blockquote {
 	padding-left: 10px;
 }
 
-.primary-menu .current-menu-item, 
-.primary-menu .current-page-ancestor{
+.primary-menu .current-menu-item a, 
+.primary-menu .current-page-ancestor a{
 	color: #666666;
 }
 
@@ -357,7 +357,7 @@ blockquote {
 	position: absolute;
 	background: #CCCCCC;
 	height: 4px;
-	width: 38.1%;
+	width: 100%;
     bottom: -8px;
     left: 5px;
     margin-left: -5px;
