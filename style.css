@@ -311,12 +311,11 @@ h1.site-name a, h2.site-name a{
 }
 
 .primary-menu li{
-	padding-right: 11px;
+	margin-right: 20px;
 }
 
 .primary-menu a{
-	padding: 4px 9px;
-	padding-left: 0;
+	padding: 2px 0;
 	transition: box-shadow .2s;
 	text-transform: uppercase;
 }
@@ -334,15 +333,19 @@ h1.site-name a, h2.site-name a{
 	padding-left: 10px;
 }
 
+.current-menu-item a, .current-page-ancestor a{
+	border-bottom: 2px solid #dc0037;
+}
+
 .current-menu-item:before, .current-page-ancestor:before{
 	content: '';
 	display: block;
 	position: absolute;
 	border: 5px solid transparent;
 	border-bottom-color: #CCCCCC;
-	bottom: -10px;
+	bottom: -13px;
 	left: 50%;
-	margin-left: -15px;
+	margin-left: -5px;
 }
 
 
@@ -375,6 +378,7 @@ h1.site-name a, h2.site-name a{
 
 .th-section-link:hover{
 	outline: 1px solid #CCCCCC;
+	text-decoration: none;
 }
 
 .th-section-link div{
