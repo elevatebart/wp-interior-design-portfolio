@@ -333,11 +333,13 @@ h1.site-name a, h2.site-name a{
 	padding-left: 10px;
 }
 
-.current-menu-item a, .current-page-ancestor a{
+.primary-menu .current-menu-item a, 
+.primary-menu .current-page-ancestor a{
 	border-bottom: 2px solid #dc0037;
 }
 
-.current-menu-item:before, .current-page-ancestor:before{
+.primary-menu .current-menu-item:before, 
+.primary-menu .current-page-ancestor:before{
 	content: '';
 	display: block;
 	position: absolute;
@@ -396,4 +398,10 @@ h1.site-name a, h2.site-name a{
 .th-section-header{
 	margin: 10px 10%;
 	text-transform: capitalize;
+}
+
+/* contact form customization */
+.wpcf7-form{
+	width: 400px;
+	margin: auto;
 }
