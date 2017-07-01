@@ -213,7 +213,7 @@ optgroup {
 	font-weight: bold;
 }
 
-/************** customizations ******************/
+/************** 2.0 general ******************/
 
 body{
 	color: #1a1a1a;
@@ -224,6 +224,9 @@ body{
 	width: 900px;
 	margin: auto;
 }
+
+
+/* Main Title: Site Name */
 
 h1.site-name, h2.site-name{
 	font-weight: 300;
@@ -243,6 +246,9 @@ h1.site-name a, h2.site-name a{
 	text-decoration: none;
 	color: inherit;
 }
+
+
+/* Memus on top */
 
 .main-navigation{
 	margin-top: 30px;
@@ -308,6 +314,9 @@ h1.site-name a, h2.site-name a{
 .contact-menu li{
 	padding-left: 10px;
 }
+
+
+/* homepage */
 
 .homepage-image{
 	width: 900px;
