@@ -350,15 +350,15 @@ blockquote {
 	content: '';
 	display: block;
 	position: absolute;
-	border: 5px solid transparent;
-	border-bottom-color: #f37745;
+	background: #CCCCCC;
+	height: 4px;
+	width: 40px;
     bottom: -8px;
     left: 5px;
     margin-left: -5px;
 }
 
 /* homepage */
-
 .homepage-image{
 	width: 900px;
 	height: 400px;
