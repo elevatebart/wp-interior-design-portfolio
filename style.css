@@ -398,7 +398,13 @@ blockquote {
 	width: 100%;
 	display: block;
 	padding-bottom: 100%;
-	background-size: cover;
+	background-size: 250px 250px;
+	transition: background-position .4s, background-size .4s;
+}
+
+.th-section-link:hover i{
+	background-position: -10px -10px;
+	background-size: 270px 270px; 
 }
 
 .th-section-link > span{
