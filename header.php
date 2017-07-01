@@ -16,10 +16,10 @@
     <script type="text/javascript">
     (function($){
         $(function(){
-            $('.homepage-image').each(function(){
+            $('.img-parallax').each(function(){
                 var $this = $(this);
                 var src = $this.attr('src');
-                var $replaced = $('<div>', {'class': 'homepage-image'});
+                var $replaced = $('<div>', {'class': $this.attr('class')});
                 $this.replaceWith($replaced);
                 $replaced.parallax({imageSrc: src, positionY: '-230px', speed: 0.85});
             });
@@ -29,22 +29,26 @@
 </head>
 <body>
 <div class="site">
- <h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
- <h2 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'description' ); ?></a></h2>
- <nav id="site-navigation" class="main-navigation" role="navigation">
-    <?php
-        // navigation menu
-        wp_nav_menu( array(
-            'theme_location' => 'primary',
-            'menu_class'     => 'primary-menu',
-            ) );
-    ?>
+    <div class="page-header">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-link" rel="home">
+            <span class="site-name"><?php bloginfo( 'name' ); ?></span>
+            <span class="site-desc"><?php bloginfo( 'description' ); ?></span>
+        </a>
+    </div>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+        <?php
+            // navigation menu
+            wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'menu_class'     => 'primary-menu',
+                ) );
+        ?>
     <hr>
-    <?php
-        // contact and social menu
-        wp_nav_menu( array(
-            'theme_location' => 'contact',
-            'menu_class'     => 'contact-menu',
-            ) );
-    ?>
- </nav>
+        <?php
+            // contact and social menu
+            wp_nav_menu( array(
+                'theme_location' => 'contact',
+                'menu_class'     => 'contact-menu',
+                ) );
+        ?>
+    </nav>

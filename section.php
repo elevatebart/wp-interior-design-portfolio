@@ -30,11 +30,11 @@ $pages = get_pages($args);
 foreach($pages as $page){
 ?>
 	<a class="th-section-link" href="<?php echo get_page_link( $page->ID ); ?>">
-	<div <?php 
+	<i <?php 
 	if(has_post_thumbnail( $page->ID )){ ?>
 		 style="background-image: url(<?php echo get_the_post_thumbnail_url( $page->ID, "large"); ?>)"
 	<?php } 
-	?>></div><span><?php echo $page->post_title; ?></span></a>
+	?>></i><span class="cartouche"><span><?php echo $page->post_title; ?></span></span></a>
 <?php
 }
 ?>

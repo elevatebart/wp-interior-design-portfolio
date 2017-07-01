@@ -247,30 +247,42 @@ blockquote {
 
 /* Main Title: Site Name */
 
-h1.site-name, h2.site-name{
+.page-header{
+	text-align: right;
+}
+
+.site-link{
+	display: inline-block;
 	font-weight: 300;
 	letter-spacing: 6px;
-}
-h1.site-name{
-	text-transform: uppercase;
 	text-align: right;
-	margin-bottom: 0;
-}
-h2.site-name{
-	text-align: right;
-	font-size: 1em;
-	margin-top: 0;
-}
-h1.site-name a, h2.site-name a{
-	text-decoration: none;
 	color: inherit;
+	padding: 11px 0;
+}
+
+.site-link:hover{
+	text-decoration: none;
+}
+
+.site-name{
+	text-transform: uppercase;
+	display: block;
+	font-size: 2em;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.site-desc{
+	display: block;
+	font-size: 1em;
+	text-decoration: none;
 }
 
 
 /* Memus on top */
 
 .main-navigation{
-	margin: 30px 0;
+	margin: 19px 0;
 	position: relative;
 }
 
@@ -333,23 +345,17 @@ h1.site-name a, h2.site-name a{
 	padding-left: 10px;
 }
 
-.primary-menu .current-menu-item a, 
-.primary-menu .current-page-ancestor a{
-	border-bottom: 2px solid #dc0037;
-}
-
 .primary-menu .current-menu-item:before, 
 .primary-menu .current-page-ancestor:before{
 	content: '';
 	display: block;
 	position: absolute;
 	border: 5px solid transparent;
-	border-bottom-color: #CCCCCC;
-	bottom: -13px;
-	left: 50%;
-	margin-left: -5px;
+	border-bottom-color: #f37745;
+    bottom: -8px;
+    left: 5px;
+    margin-left: -5px;
 }
-
 
 /* homepage */
 
@@ -383,17 +389,39 @@ h1.site-name a, h2.site-name a{
 	text-decoration: none;
 }
 
-.th-section-link div{
+.th-section-link i{
 	width: 100%;
+	display: block;
 	padding-bottom: 100%;
 	background-size: cover;
-	border: 1px solid #CCC;
 }
 
-.th-section-link span{
+.th-section-link > span{
 	font-size: 11pt;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,.6);
+    text-align: center;
+    display: flex;
+	opacity: 0;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+	transition: opacity .4s;
 }
 
+.th-section-link:hover > span{
+	opacity: 1;
+}
+
+.th-section-link > span > span{
+	padding: 10px 0;
+	width: 100%;
+	background: rgba(255,255,255,.8);
+}
 
 .th-section-header{
 	margin: 10px 10%;
