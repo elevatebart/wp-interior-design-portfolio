@@ -334,7 +334,8 @@ blockquote {
 }
 
 .primary-menu a:hover{
-	color: #666666;
+	color: #999999;
+	transition: color .4s;
 }
 
 .contact-menu{
@@ -348,7 +349,7 @@ blockquote {
 
 .primary-menu .current-menu-item a, 
 .primary-menu .current-page-ancestor a{
-	color: #666666;
+	color: #999999;
 }
 
 .primary-menu .current-menu-item:before, 
@@ -388,6 +389,7 @@ blockquote {
 	width: 250px;
 	text-decoration: none;
 	color: #333333;
+	overflow: hidden;
 }
 
 .section-link:hover{
@@ -395,12 +397,14 @@ blockquote {
 	text-decoration: none;
 }
 
-.section-link i{
+.section-link img{
 	width: 100%;
 	display: block;
-	padding-bottom: 100%;
-	background-size: 250px 250px;
-	transition: background-position .4s, background-size .4s;
+	transition: transform .4s;
+}
+
+.section-link:hover img{
+	transform: scale(1.1);
 }
 
 .section-link:hover i{
