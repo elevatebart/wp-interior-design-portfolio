@@ -22,6 +22,8 @@
 			$project_location = get_post_meta( $post_id, 'project_page_location', true );
 		?>
 		<h2><?php echo $project_title ?></h2>
+		<h3><?php echo $project_context ?></h3>
+		<h4><?php echo $project_client ?> - <?php echo $project_location ?></h4>
 	</div>
 
 	<div class="project-description">
