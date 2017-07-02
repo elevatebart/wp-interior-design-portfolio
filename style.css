@@ -223,6 +223,7 @@ body{
 .site{
 	width: 900px;
 	margin: auto;
+	margin-bottom: 50px;
 }
 
 a{
@@ -437,6 +438,21 @@ blockquote {
 .th-section-header{
 	margin: 10px 10%;
 	text-transform: capitalize;
+}
+
+/* project page */
+.project-details{
+	vertical-align: top;
+	display: inline-block;
+	width: 320px;
+}
+
+.project-description{
+	vertical-align: top;
+	display: inline-block;
+	width: 500px;
+	margin-left: 75px;
+	text-align: justify;
 }
 
 /* contact form customization */
