@@ -228,7 +228,7 @@ body{
 
 a{
 	text-decoration: none;
-	color: #5399FF;
+	color: #999999;
 }
 
 a:hover{
@@ -451,12 +451,22 @@ blockquote {
 	width: 320px;
 }
 
+.project-details h3{
+	font-weight: 300;
+}
+
+.project-details h2{
+	font-weight: normal;
+	color: #ca5f27;
+}
+
 .project-description{
 	vertical-align: top;
 	display: inline-block;
 	width: 500px;
 	margin-left: 75px;
 	text-align: justify;
+	margin-top: 55px;
 }
 
 /* contact form customization */
