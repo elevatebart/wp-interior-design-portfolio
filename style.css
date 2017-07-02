@@ -372,14 +372,14 @@ blockquote {
 }
 
 /* section page design */
-.th-section-content{
+.section-content{
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-content: center;
 }
 
-.th-section-link{
+.section-link{
 	display: inline-block;
 	text-align: left;
 	position: relative;
@@ -390,12 +390,12 @@ blockquote {
 	color: #333333;
 }
 
-.th-section-link:hover{
+.section-link:hover{
 	outline: 1px solid #CCCCCC;
 	text-decoration: none;
 }
 
-.th-section-link i{
+.section-link i{
 	width: 100%;
 	display: block;
 	padding-bottom: 100%;
@@ -403,12 +403,12 @@ blockquote {
 	transition: background-position .4s, background-size .4s;
 }
 
-.th-section-link:hover i{
-	background-position: -10px -10px;
-	background-size: 270px 270px; 
+.section-link:hover i{
+	background-position: -5px -5px;
+	background-size: 260px 260px; 
 }
 
-.th-section-link > span{
+.section-link > span{
 	font-size: 11pt;
     position: absolute;
     bottom: 0;
@@ -425,17 +425,17 @@ blockquote {
 	transition: opacity .4s;
 }
 
-.th-section-link:hover > span{
+.section-link:hover > span{
 	opacity: 1;
 }
 
-.th-section-link > span > span{
+.section-link > span > span{
 	padding: 10px 0;
 	width: 100%;
 	background: rgba(255,255,255,.8);
 }
 
-.th-section-header{
+.section-header{
 	margin: 10px 10%;
 	text-transform: capitalize;
 }

@@ -7,7 +7,7 @@
  */ 
  
 get_header(); ?>
-<div class="th-section-content">
+<div class="section-content">
 <p><?php the_content(); ?></p>
 <?php $args = array(
 	'sort_order' => 'asc',
@@ -29,12 +29,12 @@ get_header(); ?>
 $pages = get_pages($args); 
 foreach($pages as $page){
 ?>
-	<a class="th-section-link" href="<?php echo get_page_link( $page->ID ); ?>">
+	<a class="section-link" href="<?php echo get_page_link( $page->ID ); ?>">
 	<i <?php 
 	if(has_post_thumbnail( $page->ID )){ ?>
 		 style="background-image: url(<?php echo get_the_post_thumbnail_url( $page->ID, "large"); ?>)"
 	<?php } 
-	?>></i><span class="cartouche"><span><?php echo $page->post_title; ?></span></span></a>
+	?>></i><span><span><?php echo $page->post_title; ?></span></span></a>
 <?php
 }
 ?>
