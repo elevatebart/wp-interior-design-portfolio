@@ -506,6 +506,22 @@ h4{
 	margin: 0;
 }
 
+.footer-sitemap .current_page_item{
+	position: relative;
+}
+
+.footer-sitemap .current_page_item:before{
+	content: '';
+	position: absolute;
+	border: 5px solid transparent;
+	border-left-color: #999999;
+	left: -10px;
+	top: 5px;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
 .sitemap-normal li,
 .sitemap-home li{
 	display: inline-block;
