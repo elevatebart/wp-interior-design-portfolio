@@ -12,9 +12,9 @@
 		$post_id = get_the_ID();
 		$galery_id = get_post_meta( $post_id, 'project_page_galleryid', true );
 		if(!empty($galery_id)){
-		 	echo do_shortcode('[URIS id=' . $galery_id . ']'); ?>
+		 	echo do_shortcode('[URIS id=' . $galery_id . ']'); 
 		}
-
+	?>
 	<div class="project-details">
 		<?php
 			$project_title = get_post_meta( $post_id, 'project_page_title', true );
