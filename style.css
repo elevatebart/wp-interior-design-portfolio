@@ -245,6 +245,22 @@ blockquote {
 	padding-left: 0.7778em;
 }
 
+h4{
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+/* SVG Icons base styles */
+
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
 
 /* Main Title: Site Name */
 
@@ -393,7 +409,6 @@ blockquote {
 }
 
 .section-link:hover{
-	outline: 1px solid #CCCCCC;
 	text-decoration: none;
 }
 
@@ -413,7 +428,7 @@ blockquote {
 }
 
 .section-link > span{
-	font-size: 11pt;
+	font-size: 14pt;
     position: absolute;
     bottom: 0;
     top: 0;
@@ -427,6 +442,7 @@ blockquote {
     height: 100%;
     justify-content: center;
 	transition: opacity .4s;
+	color: #555;
 }
 
 .section-link:hover > span{
@@ -473,4 +489,93 @@ blockquote {
 .wpcf7-form{
 	width: 400px;
 	margin: auto;
+}
+
+/* footer */
+.footer-sitemap{
+	width: 900px;
+	border-top: 1px solid #CCCCCC;
+	margin: auto;
+	margin-bottom: 22px;
+	padding: 10px 0;
+}
+
+.footer-sitemap ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-sitemap li{
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	text-transform: uppercase;
+}
+
+.footer-sitemap a {
+	color: #333333;
+	font-size: small;
+}
+
+.footer-sitemap li li{
+	display: block;
+	text-transform: none;
+}
+
+.footer-sitemap li li a{
+	color: #999999;
+	font-size: small;
+}
+
+/* Social nav */
+.social-navigation {
+	font-size: 16px;
+	font-size: 1rem;
+	margin-bottom: 1em;
+	float: right;
+}
+
+.social-navigation ul {
+	list-style: none;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.social-navigation li {
+	display: inline;
+}
+
+.social-navigation a {
+	background-color: #767676;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	color: #fff;
+	display: inline-block;
+	height: 40px;
+	margin: 0 1em 0.5em 0;
+	text-align: center;
+	width: 40px;
+}
+
+.social-navigation a:hover,
+.social-navigation a:focus {
+	background-color: #333;
+}
+
+.social-navigation .icon {
+	height: 16px;
+	top: 12px;
+	width: 16px;
+	vertical-align: top;
+}
+
+/* */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }

@@ -11,6 +11,7 @@ function setup_interiordesign() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'interiordesign' ),
 		'contact'  => __( 'Contact Menu', 'interiordesign' ),
+		'social'  => __( 'Social Menu', 'interiordesign' ),
 	) );
 
     /*
@@ -31,18 +32,67 @@ add_action( 'after_setup_theme', 'setup_interiordesign');
 function register_project_meta_boxes($posttype, $post) {
 	if ( 'templates/project.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
 		add_meta_box( 'project-atributes', 
-			__( 'Project Data', 'textdomain' ), 
+			__( 'Project Data', 'interiordesign' ), 
 			'project_meta_boxes', 
 			'page'
 		);
 	}
+	add_meta_box('hide-from-sitemap',
+		__( 'Hide From SiteMap', 'interiordesign' ), 
+		'hide_from_sitemap_box', 
+		'page'
+	);
 }
+
 add_action( 'add_meta_boxes', 'register_project_meta_boxes', 10, 2);
- 
+
+function hide_from_sitemap_box($post_id, $post){?>
+	<?php wp_nonce_field( basename( __FILE__ ), '_hide_from_sitemap_nonce' ); 
+		$custom = get_post_custom($post->ID);
+		$_hide_from_sitemap = $custom["_hide_from_sitemap"][0]; 
+	?>
+	<p>
+		<label for="_hide_from_sitemap"><?php _e( 'Check to hide from sidemap', 'interiordesign' ); ?></label>
+		<br />
+		<input class="widefat" type="checkbox" name="_hide_from_sitemap" id="_hide_from_sitemap" <?php if( $_hide_from_sitemap == true ) { ?>checked="checked"<?php } ?> />
+	</p>
+	<?php
+}
+
+/**
+ * Save meta box hidesitemap.
+ *
+ * @param int $post_id Post ID
+ */
+function hidesitemap_save_meta($post_id, $post){
+	  /* Verify the nonce before proceeding. */
+  if ( !isset( $_POST['_hide_from_sitemap' . '_nonce'] ) || !wp_verify_nonce( $_POST['_hide_from_sitemap' . '_nonce'], basename( __FILE__ ) ) )
+    return $post_id;
+
+  /* Get the post type object. */
+  $post_type = get_post_type_object( $post->post_type );
+
+  /* Check if the current user has permission to edit the post. */
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+    return $post_id;
+
+  /* Get the posted data and sanitize it for use as an HTML class. */
+  $new_meta_value = $_POST['_hide_from_sitemap'];
+
+  /* Get the meta key. */
+  $meta_key = '_hide_from_sitemap';
+
+	if ($post_type) {
+  		update_post_meta( $post_id, $meta_key, $new_meta_value );
+	}
+	return $post_id;
+}
+add_action( 'save_post', 'hidesitemap_save_meta' , 10, 2);
+
 function project_meta_box($post, $root, $title){?>
 	<?php wp_nonce_field( basename( __FILE__ ), 'project_page_' . $root . '_nonce' ); ?>
 	<p>
-		<label for="project_page_<?php echo $root ?>"><?php _e( $title, 'example' ); ?></label>
+		<label for="project_page_<?php echo $root ?>"><?php _e( $title, 'interiordesign' ); ?></label>
 		<br />
 		<input class="widefat" type="text" name="project_page_<?php echo $root ?>" id="project_page_<?php echo $root ?>" value="<?php echo esc_attr( get_post_meta( $post->ID, 'project_page_' . $root, true ) ); ?>" maxlength="100" />
 	</p>
@@ -125,3 +175,8 @@ function interiordesign_scripts() {
 	wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.min.js', array ( 'jquery' ));
 }
 add_action( 'wp_enqueue_scripts', 'interiordesign_scripts' );
+
+/**
+ * SVG icons functions and filters.
+ */
+require get_parent_theme_file_path( '/inc/icon-functions.php' );
