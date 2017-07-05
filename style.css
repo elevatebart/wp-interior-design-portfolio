@@ -506,26 +506,32 @@ h4{
 	margin: 0;
 }
 
-.footer-sitemap li{
+.sitemap-normal li,
+.sitemap-home li{
 	display: inline-block;
 	vertical-align: top;
 	width: 150px;
 	text-transform: uppercase;
 }
 
-.footer-sitemap a {
+.sitemap-normal a,
+.sitemap-home a {
 	color: #333333;
 	font-size: small;
 }
 
-.footer-sitemap li li{
+.sitemap-normal li li{
 	display: block;
 	text-transform: none;
 }
 
-.footer-sitemap li li a{
+.sitemap-normal li li a{
 	color: #999999;
 	font-size: small;
+}
+
+.sitemap-home{
+	float: right;
 }
 
 /* Social nav */

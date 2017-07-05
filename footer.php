@@ -11,17 +11,7 @@
 </div>
 <?php wp_footer(); ?>
 <div class="footer-sitemap">
-<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
-    <?php
-   wp_nav_menu( array(
-        'theme_location' => 'social',
-        'menu_class'     => 'social-links-menu',
-        'depth'          => 1,
-        'link_before'    => '<span class="screen-reader-text">',
-        'link_after'     => '</span>' . interiordesign_get_svg( array( 'icon' => 'chain' ) ),
-    ) );
-        ?></nav>
-    <ul><?php 
+    <ul class="sitemap-home"><?php 
     $args = array(
         'fields' => 'ids',
         'post_type' => 'page',
@@ -34,17 +24,27 @@
             )
         )
     );
-    $pages_to_exclude = new WP_Query( $args );
-    $postsExcluded = array();
-    if ( $pages_to_exclude->have_posts() ) { 
-        while( $pages_to_exclude->have_posts() ) : $pages_to_exclude->the_post();
-            array_push($postsExcluded, $post);
-        endwhile;
-    }
+    $pages_to_exclude = new WP_Query( $args ); 
+    wp_list_pages(array(
+        'title_li' => '',
+        'include' => implode(',', $pages_to_exclude->posts)
+    ));
+    ?></ul>
+    <ul class="sitemap-normal"><?php 
     
     wp_list_pages(array(
         'title_li' => '',
-        'exclude' => implode(',', $postsExcluded)
+        'exclude' => implode(',', $pages_to_exclude->posts)
     )); ?></ul>
+    <nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
+    <?php
+   wp_nav_menu( array(
+        'theme_location' => 'social',
+        'menu_class'     => 'social-links-menu',
+        'depth'          => 1,
+        'link_before'    => '<span class="screen-reader-text">',
+        'link_after'     => '</span>' . interiordesign_get_svg( array( 'icon' => 'chain' ) ),
+    ) );
+        ?></nav>
 </div>
 </html>
