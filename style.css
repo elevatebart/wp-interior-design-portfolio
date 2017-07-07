@@ -595,7 +595,7 @@ h4{
 	vertical-align: top;
 }
 
-/* */
+/* to hide the screen reader test of the social mdia icons */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
