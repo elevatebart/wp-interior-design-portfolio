@@ -624,4 +624,11 @@ h4{
 		padding:0;
 		margin: 0 1% 2% 1%;
 	}
+	body .project-description{
+		margin: 22px 0 0 0;
+		width: 100%; 
+	}
+	body .project-details{
+		width: 100%;
+	}
 }
