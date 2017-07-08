@@ -485,6 +485,15 @@ h4{
 	margin-top: 55px;
 }
 
+.project-navigation{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.project-navigation div{
+	margin: 0 12px;
+}
+
 /* contact form customization */
 .wpcf7-form{
 	width: 400px;
