@@ -16,13 +16,15 @@
     <script type="text/javascript">
     (function($){
         $(function(){
-            $('.img-parallax').each(function(){
-                var $this = $(this);
-                var src = $this.attr('src');
-                var $replaced = $('<div>', {'class': $this.attr('class')});
-                $this.replaceWith($replaced);
-                $replaced.parallax({imageSrc: src, positionY: '-230px', speed: 0.85});
-            });
+            if($(window).width() > 1025){
+                $('.img-parallax').each(function(){
+                    var $this = $(this);
+                    var src = $this.attr('src');
+                    var $replaced = $('<div>', {'class': $this.attr('class')});
+                    $this.replaceWith($replaced);
+                    $replaced.parallax({imageSrc: src, positionY: '-230px', speed: 0.85});
+                });
+            }
         });
     })(jQuery);
     </script>

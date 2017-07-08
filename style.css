@@ -609,26 +609,66 @@ h4{
 	body{
 		padding: 0 11px;
 	}
+
 	body .site{
 		width: 97%;
 	}
+
+	img.img-parallax{
+		object-fit: cover;
+	}
+
+	.primary-menu li{
+		margin-right: 10px;
+	}
+
 	body .homepage-image{
 		width: 100%;
 		height: 200px;
 	}
-	body .footer-sitemap{
-		width: 97%;
-	}
+	
 	body .section-link{
 		width:31.3%;
 		padding:0;
 		margin: 0 1% 2% 1%;
 	}
+
 	body .project-description{
 		margin: 22px 0 0 0;
 		width: 100%; 
 	}
+
 	body .project-details{
 		width: 100%;
+	}
+
+	.entry-content img{
+		max-width: 100%;
+	}
+
+	.contact-menu{
+		display: none;
+	}
+
+	body blockquote{
+		font-size: medium;
+		padding: 0;
+	}
+
+	body .footer-sitemap{
+		width: 97%;
+	}
+
+	.footer-sitemap ul{
+		margin-bottom: 20px;
+		
+	}
+	.footer-sitemap ul li{
+		width: 32%;
+	}
+
+	.sitemap-home{
+		float: none;
+		text-align: left;
 	}
 }
