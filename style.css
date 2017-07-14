@@ -679,6 +679,14 @@ h4{
 		padding: 0;
 	}
 
+	.contact-page{
+		justify-content: center;
+	}
+
+	.wpcf7-form{
+		width: 86%;
+	}
+
 	.contact-content{
 		display: none;
 	}
