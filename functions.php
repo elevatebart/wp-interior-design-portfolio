@@ -29,11 +29,18 @@ add_action( 'after_setup_theme', 'setup_interiordesign');
 /**
  * Register meta box(es).
  */
-function register_project_meta_boxes($posttype, $post) {
+function register_all_meta_boxes($posttype, $post) {
 	if ( 'templates/project.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
 		add_meta_box( 'project-atributes', 
 			__( 'Project Data', 'interiordesign' ), 
 			'project_meta_boxes', 
+			'page'
+		);
+	}
+	if ( 'templates/contact.php' == get_post_meta( $post->ID, '_wp_page_template', true ) ) {
+		add_meta_box( 'project-atributes', 
+			__( 'Contact Form', 'interiordesign' ), 
+			'contact_form_boxes', 
 			'page'
 		);
 	}
@@ -44,7 +51,61 @@ function register_project_meta_boxes($posttype, $post) {
 	);
 }
 
-add_action( 'add_meta_boxes', 'register_project_meta_boxes', 10, 2);
+add_action( 'add_meta_boxes', 'register_all_meta_boxes', 10, 2);
+
+function contact_form_boxes($post){?>
+	<?php wp_nonce_field( basename( __FILE__ ), 'contact_form_id_nonce' ); ?>
+	<p>
+		<label for="contact_form_id"><?php _e( 'Enter The Contact Form 7 Id', 'interiordesign' ); ?></label>
+		<br />
+		<input class="widefat" type="text" name="contact_form_id" id="contact_form_id" value="<?php echo esc_attr( get_post_meta( $post->ID, 'contact_form_id', true ) ); ?>" maxlength="20" />
+	</p>
+	<?php
+}
+
+/**
+ * Save meta box content.
+ *
+ * @param int $post_id Post ID
+ */
+function save_contact_form($post_id, $post){
+  if ( 'templates/contact.php' == get_post_meta( $post_id, '_wp_page_template', true ) ) {
+	  
+	  /* Verify the nonce before proceeding. */
+	if ( !isset( $_POST['contact_form_id_nonce'] ) || !wp_verify_nonce( $_POST['contact_form_id_nonce'], basename( __FILE__ ) ) )
+		return $post_id;
+
+	/* Get the post type object. */
+	$post_type = get_post_type_object( $post->post_type );
+
+	/* Check if the current user has permission to edit the post. */
+	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+		return $post_id;
+
+	/* Get the posted data and sanitize it for use as an HTML class. */
+	$new_meta_value = ( isset( $_POST['contact_form_id'] ) ? esc_attr( $_POST['contact_form_id'] ) : '' );
+
+	/* Get the meta key. */
+	$meta_key = 'contact_form_id';
+
+	/* Get the meta value of the custom field key. */
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	/* If a new meta value was added and there was no previous value, add it. */
+	if ( $new_meta_value && '' == $meta_value )
+		add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+	/* If the new meta value does not match the old value, update it. */
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+		update_post_meta( $post_id, $meta_key, $new_meta_value );
+
+	/* If there is no new meta value but an old value exists, delete it. */
+	elseif ( '' == $new_meta_value && $meta_value )
+		delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+}
+add_action( 'save_post', 'save_contact_form' , 10, 2);
+
 
 function hide_from_sitemap_box($post_id, $post){?>
 	<?php wp_nonce_field( basename( __FILE__ ), '_hide_from_sitemap_nonce' ); 
@@ -58,6 +119,7 @@ function hide_from_sitemap_box($post_id, $post){?>
 	</p>
 	<?php
 }
+
 
 /**
  * Save meta box hidesitemap.

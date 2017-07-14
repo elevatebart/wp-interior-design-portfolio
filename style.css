@@ -496,7 +496,22 @@ h4{
 
 /* contact form customization */
 .wpcf7-form{
-	width: 400px;
+	width: 100%;
+	margin: auto;
+}
+
+.contact-page{
+	display: flex;
+	justify-content: space-between;
+}
+
+.contact-content{
+	width: 50%;
+}
+
+.round-image{
+	border-radius: 50%;
+	display: block;
 	margin: auto;
 }
 
