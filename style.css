@@ -463,6 +463,7 @@ h4{
 /* project page */
 .project-container h2{
 	font-weight: normal;
+	margin-top: 40px;
 	color: #ca5f27;
 }
 
