@@ -110,6 +110,16 @@ samp {
 	font-size: 1em;
 }
 
+input[type="text"],
+input[type="email"],
+textarea{
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	border: solid 1px #CCCCCC;
+}
+
 button,
 input,
 optgroup,
@@ -584,6 +594,11 @@ h4{
 	text-align: right;
 }
 
+.sitemap-home .current_page_item:before{
+	left: auto;
+	right: -7px;
+}
+
 /* Social nav */
 .social-navigation {
 	font-size: 16px;
@@ -691,11 +706,31 @@ h4{
 	}
 
 	.wpcf7-form{
-		width: 86%;
+		width: 90%;
+	}
+
+	.wpcf7-form label,
+	.wpcf7-form p,
+	.wpcf7-form textarea,
+	.wpcf7-form input
+	{
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.contact-page{
+		display: block;
 	}
 
 	.contact-content{
-		display: none;
+		width: auto;
+		height: 200px;
+	}
+
+	.contact-content img{
+		width: 150px;
+		height: 150px;
+		float: left;
 	}
 
 	body .footer-sitemap{
