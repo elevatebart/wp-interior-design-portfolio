@@ -481,13 +481,12 @@ h4{
 	display: inline-block;
 	width: 500px;
 	margin-left: 75px;
-	text-align: justify;
 	margin-top: 55px;
 }
 
-.project-description p{
-	text-indent: 20px;
-}
+/*.project-description p{
+	text-indent: 120px;
+}*/
 
 .project-navigation{
 	display: flex;
