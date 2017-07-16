@@ -492,6 +492,7 @@ h4{
 }
 
 .project-navigation{
+	margin-top: 40px;
 	display: flex;
 	justify-content: flex-end;
 }
