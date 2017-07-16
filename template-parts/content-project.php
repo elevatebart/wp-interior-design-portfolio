@@ -23,7 +23,6 @@
 ?>
 	<h2><?php echo $project_title ?></h2>
 	<div class="project-details">
-		<h2><?php echo $project_title ?></h2>
 		<h3><?php echo $project_context ?></h3>
 		<h3><?php echo $project_client ?> - <?php echo $project_location ?></h3>
 	</div>
