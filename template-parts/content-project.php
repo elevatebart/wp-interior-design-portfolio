@@ -7,7 +7,7 @@
  */
 ?>
 
-<div <?php post_class(); ?>>
+<div class="project-container">
 	<?php
 		$post_id = get_the_ID();
 		$galery_id = get_post_meta( $post_id, 'project_page_galleryid', true );
@@ -15,13 +15,14 @@
 		 	echo do_shortcode('[URIS id=' . $galery_id . ']'); 
 		}
 	?>
+	<?php
+		$project_title = get_post_meta( $post_id, 'project_page_title', true );
+		$project_context = get_post_meta( $post_id, 'project_page_context', true );
+		$project_client = get_post_meta( $post_id, 'project_page_client', true );
+		$project_location = get_post_meta( $post_id, 'project_page_location', true );
+?>
+	<h2><?php echo $project_title ?></h2>
 	<div class="project-details">
-		<?php
-			$project_title = get_post_meta( $post_id, 'project_page_title', true );
-			$project_context = get_post_meta( $post_id, 'project_page_context', true );
-			$project_client = get_post_meta( $post_id, 'project_page_client', true );
-			$project_location = get_post_meta( $post_id, 'project_page_location', true );
-		?>
 		<h2><?php echo $project_title ?></h2>
 		<h3><?php echo $project_context ?></h3>
 		<h3><?php echo $project_client ?> - <?php echo $project_location ?></h3>

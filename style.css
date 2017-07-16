@@ -461,6 +461,11 @@ h4{
 }
 
 /* project page */
+.project-container h2{
+	font-weight: normal;
+	color: #ca5f27;
+}
+
 .project-details{
 	vertical-align: top;
 	display: inline-block;
@@ -469,11 +474,8 @@ h4{
 
 .project-details h3{
 	font-weight: 300;
-}
-
-.project-details h2{
-	font-weight: normal;
-	color: #ca5f27;
+	color: #999999;
+	margin: 3px 0;
 }
 
 .project-description{
@@ -481,7 +483,11 @@ h4{
 	display: inline-block;
 	width: 500px;
 	margin-left: 75px;
-	margin-top: 55px;
+	font-weight: 300;
+}
+
+.project-description p:first-child{
+	margin-top: 0;
 }
 
 .project-navigation{
