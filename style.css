@@ -749,4 +749,9 @@ h4{
 		float: none;
 		text-align: left;
 	}
+
+	.sitemap-home .current_page_item:before{
+		left: -7px;
+		right: auto;
+	}
 }
