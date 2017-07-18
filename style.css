@@ -260,8 +260,18 @@ h4{
 	font-weight: normal;
 }
 
-/* SVG Icons base styles */
+/* Fix image alignment */
+img.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
 
+img.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+/* SVG Icons base styles */
 .icon {
 	display: inline-block;
 	fill: currentColor;
